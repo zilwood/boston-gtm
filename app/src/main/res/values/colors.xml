@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!-- App's theme colors -->
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#cc0000</color>
+    <color name="theme_color">#cc0000</color>
+
+    <!-- Text colors -->
+    <color name="foreground_text">#ffffff</color>
+    <color name="text_color_light">#cccccc</color>
+    <color name="text_color">#333333</color>
 </resources>
