@@ -1,9 +1,98 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.bostonandroid.gtm.SampleFragment">
+    android:fitsSystemWindows="true"
+    tools:context=".SampleFragment">
 
+    <!--Main layout-->
+    <LinearLayout
+        android:id="@+id/login_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/branding"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/branding_top_margin"
+            android:src="@drawable/branding" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/username_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/layout_left_margin"
+            android:layout_marginRight="@dimen/layout_right_margin"
+            android:layout_marginTop="@dimen/username_top_margin">
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/userinput_field_height"
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/login_username"
+                android:inputType="number"
+                android:textSize="@dimen/userinput_text_size" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/password_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/username_wrapper"
+            android:layout_marginTop="@dimen/password_top_margin"
+            android:layout_marginLeft="@dimen/layout_left_margin"
+            android:layout_marginRight="@dimen/layout_right_margin">
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/userinput_field_height"
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/login_password"
+                android:inputType="textPassword"
+                android:textSize="@dimen/userinput_text_size" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/layout_left_margin"
+            android:layout_marginRight="@dimen/layout_right_margin"
+            android:layout_marginTop="@dimen/button_top_margin">
+
+            <CheckBox
+                android:id="@+id/remember_me_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:buttonTint="@color/theme_color"
+                android:checked="true"
+                android:text="@string/remember_me"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/remember_me_text_size" />
+
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/button_style"
+                android:shadowColor="#000000"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="0"
+                android:text="@string/login_button"
+                android:textColor="@color/foreground_text"
+                android:textSize="@dimen/login_text_size" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>
