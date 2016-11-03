@@ -26,7 +26,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        TagManager tagManager = TagManager.getInstance(this);
+        TagManager tagManager = TagManager.getInstance(getApplicationContext());
 
         // Modify the log level of the logger to print out not only
         // warning and error messages, but also verbose, debug, info messages.
@@ -34,7 +34,7 @@ public class SplashScreen extends AppCompatActivity {
 
         PendingResult<ContainerHolder> pending =
                 tagManager.loadContainerPreferNonDefault(CONTAINER_ID,
-                        R.raw.gtm_wrglzb);
+                        R.raw.gtm_default_container);
 
         // The onResult method will be called as soon as one of the following happens:
         //     1. a saved container is loaded
