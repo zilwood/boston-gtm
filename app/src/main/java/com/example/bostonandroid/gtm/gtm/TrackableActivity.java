@@ -17,13 +17,13 @@ public class TrackableActivity extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         dataLayer = TagManager.getInstance(getApplicationContext()).getDataLayer();
-        dataLayer.pushEvent("StartActivity", DataLayer.mapOf("name", getClass().getName()));
+        dataLayer.pushEvent("StartActivity", DataLayer.mapOf("name", getClass().getSimpleName()));
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        dataLayer.pushEvent("ResumeActivity", DataLayer.mapOf("name", getClass().getName()));
+        dataLayer.pushEvent("ResumeActivity", DataLayer.mapOf("name", getClass().getSimpleName()));
     }
 
     @Override
@@ -31,7 +31,7 @@ public class TrackableActivity extends AppCompatActivity implements View.OnClick
         if (view instanceof CheckBox) {
             dataLayer.pushEvent("Check", DataLayer.mapOf(
                     "name", view.getTag().toString(),
-                    "check", ((CheckBox) view).isChecked()
+                    "isChecked", ((CheckBox) view).isChecked()
             ));
         } else {
             dataLayer.pushEvent("Click", DataLayer.mapOf("name", view.getTag().toString()));

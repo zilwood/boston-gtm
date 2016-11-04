@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Taken from https://developers.google.com/tag-manager/android/v4/#init
  */
-public class SplashScreenActivity extends TrackableActivity {
+public class SplashScreenActivity extends AppCompatActivity {
     private static final String TAG = "BostonAndroid";
     private static final long TIMEOUT_FOR_CONTAINER_OPEN_MILLISECONDS = 2000;
     private static final String CONTAINER_ID = "GTM-PZBP9C";
