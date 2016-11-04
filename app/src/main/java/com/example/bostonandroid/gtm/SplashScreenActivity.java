@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.bostonandroid.gtm.gtm.TrackableActivity;
+import com.example.bostonandroid.gtm.login.LoginActivity;
+import com.example.bostonandroid.gtm.gtm.ContainerHolderSingleton;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.tagmanager.Container;
@@ -16,10 +19,10 @@ import java.util.concurrent.TimeUnit;
 /**
  * Taken from https://developers.google.com/tag-manager/android/v4/#init
  */
-public class SplashScreen extends AppCompatActivity {
+public class SplashScreenActivity extends AppCompatActivity {
     private static final String TAG = "BostonAndroid";
     private static final long TIMEOUT_FOR_CONTAINER_OPEN_MILLISECONDS = 2000;
-    private static final String CONTAINER_ID = "GTM-WRGLZB";
+    private static final String CONTAINER_ID = "GTM-PZBP9C";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,7 +61,7 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void startMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 

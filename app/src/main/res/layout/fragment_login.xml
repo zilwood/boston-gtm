@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".SampleFragment">
+    tools:context=".login.LoginFragment">
 
     <!--Main layout-->
     <LinearLayout
@@ -16,6 +16,7 @@
 
         <ImageView
             android:id="@+id/branding"
+            android:tag="Logo"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -30,13 +31,13 @@
             android:layout_marginRight="@dimen/layout_right_margin"
             android:layout_marginTop="@dimen/username_top_margin">
 
-            <android.support.design.widget.TextInputEditText
+            <EditText
                 android:id="@+id/username"
+                android:tag="Username Input"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/userinput_field_height"
                 android:layout_gravity="center_horizontal"
                 android:hint="@string/login_username"
-                android:inputType="number"
                 android:textSize="@dimen/userinput_text_size" />
 
         </android.support.design.widget.TextInputLayout>
@@ -50,8 +51,9 @@
             android:layout_marginLeft="@dimen/layout_left_margin"
             android:layout_marginRight="@dimen/layout_right_margin">
 
-            <android.support.design.widget.TextInputEditText
+            <EditText
                 android:id="@+id/password"
+                android:tag="Password Input"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/userinput_field_height"
                 android:layout_gravity="center_horizontal"
@@ -70,6 +72,7 @@
 
             <CheckBox
                 android:id="@+id/remember_me_checkbox"
+                android:tag="Remember Me"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -81,6 +84,7 @@
 
             <Button
                 android:id="@+id/login_button"
+                android:tag="Login Button"
                 android:layout_width="@dimen/button_width"
                 android:layout_height="@dimen/button_height"
                 android:layout_alignParentRight="true"
