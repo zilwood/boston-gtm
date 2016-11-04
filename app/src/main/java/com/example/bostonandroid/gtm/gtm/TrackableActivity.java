@@ -52,7 +52,7 @@ public class TrackableActivity extends AppCompatActivity implements View.OnClick
 
                 dataLayer.pushEvent("Input", DataLayer.mapOf(
                         "name", view.getTag().toString(),
-                        "text", ((EditText) view).getText().toString()
+                        "textInput", ((EditText) view).getText().toString()
                 ));
             }
         }
