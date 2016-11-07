@@ -1,4 +1,4 @@
-package com.example.bostonandroid.gtm.gtm;
+package com.example.bostonandroid.gtm.tracker;
 
 import com.google.android.gms.tagmanager.ContainerHolder;
 

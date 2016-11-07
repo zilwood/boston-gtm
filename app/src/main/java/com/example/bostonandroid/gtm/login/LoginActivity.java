@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.WindowManager;
 
 import com.example.bostonandroid.gtm.R;
-import com.example.bostonandroid.gtm.gtm.TrackableActivity;
+import com.example.bostonandroid.gtm.tracker.TrackableActivity;
 
 public class LoginActivity extends TrackableActivity {
 

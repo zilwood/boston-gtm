@@ -9,7 +9,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.bostonandroid.gtm.R;
-import com.example.bostonandroid.gtm.gtm.TrackableFragment;
+import com.example.bostonandroid.gtm.tracker.TrackableFragment;
 
 public class LoginFragment extends TrackableFragment {
     public static final String TAG = LoginFragment.class.getSimpleName();
@@ -37,6 +37,4 @@ public class LoginFragment extends TrackableFragment {
 
         return rootView;
     }
-
-
 }
