@@ -98,5 +98,16 @@
                 android:textSize="@dimen/login_text_size" />
 
         </RelativeLayout>
+
+        <TextView
+            android:id="@+id/quote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/layout_left_margin"
+            android:text="@string/quote_header"
+            android:textSize="@dimen/quote_text_size"
+            android:textStyle="italic"
+            android:fontFamily="sans-serif-light"
+            android:visibility="gone"/>
     </LinearLayout>
 </FrameLayout>

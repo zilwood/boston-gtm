@@ -8,4 +8,5 @@
     <string name="remember_me">remember me</string>
     <string name="invalid_username">Invalid ID</string>
     <string name="invalid_password">Password must be minimum 6 characters</string>
+    <string name="quote_header">Quote of the day\n\n</string>
 </resources>

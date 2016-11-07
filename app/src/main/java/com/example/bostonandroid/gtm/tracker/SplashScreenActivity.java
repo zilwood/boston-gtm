@@ -51,17 +51,11 @@ public class SplashScreenActivity extends AppCompatActivity {
                     Log.e(TAG, "Failure loading container");
                     return;
                 }
-                getConfig(container);
                 ContainerLoadedCallback.registerCallbacksForContainer(container);
                 containerHolder.setContainerAvailableListener(new ContainerLoadedCallback());
                 startMainActivity();
             }
         }, TIMEOUT_FOR_CONTAINER_OPEN_MILLISECONDS, TimeUnit.MILLISECONDS);
-        // Rest of the Activity definition.
-    }
-
-    private static void getConfig(Container container) {
-
     }
 
     private void startMainActivity() {
