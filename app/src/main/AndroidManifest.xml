@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".login.LoginActivity" />
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".tracker.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +30,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".gtm.TrackableActivity"></activity>
+        <activity android:name=".tracker.TrackableActivity"></activity>
     </application>
 
 </manifest>

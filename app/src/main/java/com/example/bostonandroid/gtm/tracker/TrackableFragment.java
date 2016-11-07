@@ -1,7 +1,8 @@
-package com.example.bostonandroid.gtm.gtm;
+package com.example.bostonandroid.gtm.tracker;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.text.InputType;
 import android.view.View;
 import android.widget.CheckBox;
@@ -10,20 +11,15 @@ import android.widget.EditText;
 import com.google.android.gms.tagmanager.DataLayer;
 import com.google.android.gms.tagmanager.TagManager;
 
-public class TrackableActivity extends AppCompatActivity implements View.OnClickListener, View.OnFocusChangeListener{
+public class TrackableFragment extends Fragment implements View.OnClickListener, View.OnFocusChangeListener {
+
     DataLayer dataLayer;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        dataLayer = TagManager.getInstance(getApplicationContext()).getDataLayer();
-        dataLayer.pushEvent("StartActivity", DataLayer.mapOf("name", getClass().getSimpleName()));
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        dataLayer.pushEvent("ResumeActivity", DataLayer.mapOf("name", getClass().getSimpleName()));
+        dataLayer = TagManager.getInstance(getActivity().getApplicationContext()).getDataLayer();
+        dataLayer.pushEvent("StartFragment", DataLayer.mapOf("name", getClass().getSimpleName()));
     }
 
     @Override
@@ -45,14 +41,14 @@ public class TrackableActivity extends AppCompatActivity implements View.OnClick
             EditText text = (EditText) view;
             int inputType = text.getInputType();
 
-            if (inputType != InputType.TYPE_TEXT_VARIATION_PASSWORD
-                    && inputType != InputType.TYPE_NUMBER_VARIATION_PASSWORD
-                    && inputType != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-                    && inputType != InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD) {
+            if (inputType != (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD)
+                    && inputType != (InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD)
+                    && inputType != (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD)
+                    && inputType != (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD)) {
 
                 dataLayer.pushEvent("Input", DataLayer.mapOf(
                         "name", view.getTag().toString(),
-                        "text", ((EditText) view).getText().toString()
+                        "textInput", text.getText().toString()
                 ));
             }
         }

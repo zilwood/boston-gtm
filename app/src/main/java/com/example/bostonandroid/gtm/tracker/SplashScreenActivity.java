@@ -1,13 +1,12 @@
-package com.example.bostonandroid.gtm;
+package com.example.bostonandroid.gtm.tracker;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.example.bostonandroid.gtm.gtm.TrackableActivity;
+import com.example.bostonandroid.gtm.R;
 import com.example.bostonandroid.gtm.login.LoginActivity;
-import com.example.bostonandroid.gtm.gtm.ContainerHolderSingleton;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.tagmanager.Container;
@@ -36,7 +35,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         tagManager.setVerboseLoggingEnabled(true);
 
         PendingResult<ContainerHolder> pending =
-                tagManager.loadContainerPreferNonDefault(CONTAINER_ID,
+                tagManager.loadContainerPreferFresh(CONTAINER_ID,
                         R.raw.gtm_default_container);
 
         // The onResult method will be called as soon as one of the following happens:
@@ -57,7 +56,6 @@ public class SplashScreenActivity extends AppCompatActivity {
                 startMainActivity();
             }
         }, TIMEOUT_FOR_CONTAINER_OPEN_MILLISECONDS, TimeUnit.MILLISECONDS);
-        // Rest of the Activity definition.
     }
 
     private void startMainActivity() {
