@@ -25,10 +25,9 @@ public class TrackableFragment extends Fragment implements View.OnClickListener,
     @Override
     public void onClick(View view) {
         if (view instanceof CheckBox) {
-            dataLayer.pushEvent("Check", DataLayer.mapOf(
-                    "name", view.getTag().toString(),
-                    "isChecked", ((CheckBox) view).isChecked()
-            ));
+            if(!((CheckBox) view).isChecked()){
+                dataLayer.push("check_box", view.getTag().toString() + ": " + false);
+            }
         } else {
             dataLayer.pushEvent("Click", DataLayer.mapOf("name", view.getTag().toString()));
         }
@@ -46,10 +45,7 @@ public class TrackableFragment extends Fragment implements View.OnClickListener,
                     && inputType != (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD)
                     && inputType != (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD)) {
 
-                dataLayer.pushEvent("Input", DataLayer.mapOf(
-                        "name", view.getTag().toString(),
-                        "textInput", text.getText().toString()
-                ));
+                dataLayer.push("input", view.getTag().toString() + ": " + text.getText().toString());
             }
         }
     }

@@ -29,10 +29,9 @@ public class TrackableActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View view) {
         if (view instanceof CheckBox) {
-            dataLayer.pushEvent("Check", DataLayer.mapOf(
-                    "name", view.getTag().toString(),
-                    "isChecked", ((CheckBox) view).isChecked()
-            ));
+            if(!((CheckBox) view).isChecked()){
+                dataLayer.push("check_box", view.getTag().toString() + ": " + false);
+            }
         } else {
             dataLayer.pushEvent("Click", DataLayer.mapOf("name", view.getTag().toString()));
         }
@@ -45,15 +44,12 @@ public class TrackableActivity extends AppCompatActivity implements View.OnClick
             EditText text = (EditText) view;
             int inputType = text.getInputType();
 
-            if (inputType != InputType.TYPE_TEXT_VARIATION_PASSWORD
-                    && inputType != InputType.TYPE_NUMBER_VARIATION_PASSWORD
-                    && inputType != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-                    && inputType != InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD) {
+            if (inputType != (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD)
+                    && inputType != (InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD)
+                    && inputType != (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD)
+                    && inputType != (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD)) {
 
-                dataLayer.pushEvent("Input", DataLayer.mapOf(
-                        "name", view.getTag().toString(),
-                        "textInput", ((EditText) view).getText().toString()
-                ));
+                dataLayer.push("input", view.getTag().toString() + ": " + text.getText().toString());
             }
         }
     }

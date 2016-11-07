@@ -33,7 +33,7 @@
 
             <EditText
                 android:id="@+id/username"
-                android:tag="Username Input"
+                android:tag="Username"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/userinput_field_height"
                 android:layout_gravity="center_horizontal"
@@ -53,7 +53,7 @@
 
             <EditText
                 android:id="@+id/password"
-                android:tag="Password Input"
+                android:tag="Password"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/userinput_field_height"
                 android:layout_gravity="center_horizontal"
